@@ -2,9 +2,9 @@
   
 const getUserChoice = userInput => {
   
-  userInput === "bomb" ? userInput = userInput.toUpperCase() : userInput = userInput.toLowerCase();
+  userInput = userInput.toLowerCase();
   
-  if (userInput === "rock" || userInput === "paper" || userInput === "scissors" || userInput === "BOMB") {
+  if (userInput === "rock" || userInput === "paper" || userInput === "scissors" || userInput === "bomb") {
     return userInput;
   } else {
     return "error: invalid response";
@@ -34,7 +34,7 @@ const determineWinner = (userChoice, computerChoice)  => {
     return " The game is a tie! ";
   }
   
-  if (userChoice === "BOMB") {
+  if (userChoice === "bomb") {
     return " KABOOM you win!!! ";
   }
   

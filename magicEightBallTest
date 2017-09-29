@@ -1,0 +1,50 @@
+<script>
+
+const magicEightBall = () => {
+ 
+const userName = prompt("Would you like to tell the Magic 8 Ball your name?");
+ 
+userName ? document.write(`Hello, ${userName}!  `) : document.write(`Hello!  `);
+ 
+const userQuestion = prompt("What is your question for the Magic 8 Ball?");
+ 
+document.write(`Q: ${userQuestion}  `);
+ 
+let randomNumber = Math.floor(Math.random() * 7);
+ 
+let eightBall = "";
+ 
+switch (randomNumber) {
+  case 0:
+   eightBall = "Your wish will come true.";
+    break;
+  case 1:
+    eightBall = "This battle will be won.";
+    break;
+  case 2:
+    eightBall = "You will be better off than before.";
+    break;
+  case 3:
+    eightBall = "Signal interference. Try again.";
+    break;
+  case 4:
+    eightBall = "Uncertainties must resolve. Ask later.";
+    break;
+  case 5:
+    eightBall = "You may not get the result you seek, but you will prevail.";
+    break;
+  case 6:
+    eightBall = "You will undergo challenges before your next victory.";
+    break;
+  case 7:
+    eightBall = "You will be pleased with the outcome.";
+    break;
+                    }
+ 
+document.write(`A: ${eightBall}`);
+ 
+};
+ 
+magicEightBall();
+
+</script>

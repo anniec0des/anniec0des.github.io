@@ -1,12 +1,12 @@
 <script>
  
-const userName = prompt("Would you like to tell the Magic 8 Ball your name?");
+const userName = prompt("Would you like to tell the Magic 8 Ball your name? (To skip, click OK.)");
  
-userName ? document.write(`Hello, ${userName}!  `) : document.write(`Hello!  `);
+userName ? document.write(`Hello, ${userName}!  `) : document.write("Hello!  ");
  
-const userQuestion = prompt("What is your question for the Magic 8 Ball?");
- 
-document.write(`Q: ${userQuestion}  `);
+const userQuestion = prompt("What is your question for the Magic 8 Ball? (In yes/no format, please.)");
+
+userQuestion ? document.write(` Q: ${userQuestion}  `) : document.write(" Q: [Open-ended inquiry]  ");
  
 let randomNumber = Math.floor(Math.random() * 8);
  
@@ -37,9 +37,11 @@ switch (randomNumber) {
   case 7:
     eightBall = "You will be pleased with the outcome.";
     break;
+ default:
+  eightBall = "Default Error: please notify anniec0des";
+  break;
                     }
  
-document.write(`A: ${eightBall}`);
-
+document.write(` A: ${eightBall}`);
 
 </script>

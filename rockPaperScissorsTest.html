@@ -12,7 +12,7 @@ const getUserChoice = userInput => {
   if (userInput === "rock" || userInput === "paper" || userInput === "scissors" || userInput === "BOMB") {
     return userInput;
   } else {
-    document.write(" Error: Invalid user input. ");
+    return "invalid response";
   };
 };
 
@@ -66,13 +66,17 @@ const determineWinner = (userChoice, computerChoice)  => {
       return " The computer wins! ";
     }
   }
+  
+  if (userChoice === "invalid response") {
+    return "Try again!";
+  }
 }
 
-const playGame = () => {
+const playGame = () => {    
   let userChoice = getUserChoice(prompt("Rock, paper, scissors, SHOOT! What do you throw?"));
-  document.write(` You threw: ${userChoice} `);
   let computerChoice = getComputerChoice();
-  document.write(` The computer threw: ${computerChoice} `);
+  document.write(` The computer threw: ${computerChoice}. `);
+  document.write(` You threw: ${userChoice}. `);
   document.write(determineWinner(userChoice, computerChoice));
 }
 

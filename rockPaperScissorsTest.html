@@ -1,18 +1,13 @@
 <script>
   
 const getUserChoice = userInput => {
-  if (userInput === "rock" || userInput === "paper" || userInput === "scissors") {
-    userInput = userInput.toLowerCase();
-  }
   
-  if (userInput === "bomb") {
-    userInput = userInput.toUpperCase();
-  }
+  userInput === "bomb" ? userInput = userInput.toUpperCase() : userInput = userInput.toLowerCase();
   
   if (userInput === "rock" || userInput === "paper" || userInput === "scissors" || userInput === "BOMB") {
     return userInput;
   } else {
-    return "invalid response";
+    return "error: invalid response";
   };
 };
 
@@ -67,7 +62,7 @@ const determineWinner = (userChoice, computerChoice)  => {
     }
   }
   
-  if (userChoice === "invalid response") {
+  if (userChoice === "error: invalid response") {
     return "Try again!";
   }
 }

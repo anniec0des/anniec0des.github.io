@@ -1,6 +1,17 @@
 <script>
   
-  let yearInQuestion = 1984;
+let yearInQuestion = 1984;
+  
+const getCurrentYear = () => {
+  let currentTime = new Date()
+  let currentYear = currentTime.getFullYear();
+  return currentYear;
+}
+
+const getHowManyYearsAgo = (yearInQuestion) => {
+  let howManyYearsAgo = getCurrentYear() - yearInQuestion;
+  return howManyYearsAgo;
+}
 
 const getMyAgeThen = (yearInQuestion) => {
   let myAgeThen = yearInQuestion - 1984;
@@ -117,7 +128,7 @@ const getMyLifeThen = (yearInQuestion) => {
 };
 
 const getYearsAgoMessage = (yearInQuestion) => {
-  document.write(`In the year ${yearInQuestion}, I turned ${getMyAgeThen(yearInQuestion)} years old. ${getMyLifeThen(yearInQuestion)} `);
+  document.write(`The year ${yearInQuestion} was ${getHowManyYearsAgo(yearInQuestion)} years ago. I turned ${getMyAgeThen(yearInQuestion)} years old, and ${getMyLifeThen(yearInQuestion)} `);
 };
 
 getYearsAgoMessage(prompt("What is the year in question?"));

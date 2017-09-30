@@ -10,40 +10,56 @@ const getCurrentYear = () => {
 
 const getHowManyYearsAgo = (yearInQuestion) => {
   let howManyYearsAgo = getCurrentYear() - yearInQuestion;
-  return howManyYearsAgo;
-}
 
-const getMyAgeThen = (yearInQuestion) => {  
-  let myAgeThen = yearInQuestion - 1984;  
-  const getPluralOrSingleYear = (myAgeThen) => {
-    let absMyAgeThen = Math.abs(myAgeThen);
-    let pluralOrSingle = ""
-    if (absMyAgeThen === 1) {
+    const getPluralOrSingleYear = (howManyYearsAgo) => {
+    if (howManyYearsAgo === 1) {
       pluralOrSingleYear = "year"
     } else {
       pluralOrSingleYear = "years"
     }
     return pluralOrSingleYear
+    }
+    
+  return `${howManyYearsAgo} ${getPluralOrSingleYear(howManyYearsAgo)} ago`;  
+}
+
+const getMyAgeThen = (yearInQuestion) => {  
+  let myAgeThen = yearInQuestion - 1984;  
+  
+  const getPluralOrSingleYear = (myAgeThen) => {
+    let absMyAgeThen = Math.abs(myAgeThen);
+    let pluralOrSingle = "";
+    if (absMyAgeThen === 1) {
+      pluralOrSingleYear = "year";
+    } else {
+      pluralOrSingleYear = "years";
+    }
+    return pluralOrSingleYear;
   }  
+  
   if (myAgeThen < 0) {
     let yearsBeforeMe = Math.abs(myAgeThen);
-    return `that was ${yearsBeforeMe} ${getPluralOrSingleYear(myAgeThen)} before I was born`
-  } else {
+    return `that was ${yearsBeforeMe} ${getPluralOrSingleYear(myAgeThen)} before I was born`;
+  } else if (myAgeThen === 0) {
+    return "that was the year I was born";
+  } else if (myAgeThen > 0) {
     return `I turned ${myAgeThen} ${getPluralOrSingleYear(myAgeThen)} old`;
-  };
+  } else {
+    return "default error in getMyAgeThen block";
+  }
 };
 
 const getMyLifeThen = (yearInQuestion) => {
-  let myLifeYear = getMyAgeThen(yearInQuestion);
+  let myLifeYear = yearInQuestion - 1984;
   switch (myLifeYear) {
     case 0:
-      return "I was a baby and not even in daycare yet";
+      return "I was a baby and not even in daycare yet.";
       break;
     case 1: 
-      return "I was a baby in daycare";
+      return "I was a baby in daycare.";
       break;
     case 2:
-      return "I was a toddler in daycare";
+      return "I was a toddler in daycare.";
       break;
     case 3:
       return "I was a toddler in preschool.";
@@ -137,13 +153,13 @@ const getMyLifeThen = (yearInQuestion) => {
       return "Milbank promoted me to permanent employee, and I moved to my one-bedroom apartment in NJ.";
       break;    
     default:
-      return "I haven't written a description for that time yet.";
+      return "I don't have a description for that time.";
       break;
                     };
 };
 
 const getYearsAgoMessage = (yearInQuestion) => {
-  document.write(`The year ${yearInQuestion} was ${getHowManyYearsAgo(yearInQuestion)} years ago, and ${getMyAgeThen(yearInQuestion)}. ${getMyLifeThen(yearInQuestion)} `);
+  document.write(`The year ${yearInQuestion} was ${getHowManyYearsAgo(yearInQuestion)}, and ${getMyAgeThen(yearInQuestion)}. ${getMyLifeThen(yearInQuestion)} `);
 };
 
 getYearsAgoMessage(prompt("What is the year in question?"));

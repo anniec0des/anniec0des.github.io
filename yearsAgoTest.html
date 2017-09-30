@@ -1,1 +1,125 @@
-<script src="https://gist.github.com/anniec0des/af69d450ce56c2117cfcd24943404f36.js"></script>
+<script>
+  
+  let yearInQuestion = 1984;
+
+const getMyAgeThen = (yearInQuestion) => {
+  let myAgeThen = yearInQuestion - 1984;
+  return myAgeThen;
+};
+
+const getMyLifeThen = (yearInQuestion) => {
+  let myLifeYear = getMyAgeThen(yearInQuestion);
+  switch (myLifeYear) {
+    case 0:
+      return "I was a baby and not even in daycare yet";
+      break;
+    case 1: 
+      return "I was a baby in daycare";
+      break;
+    case 2:
+      return "I was a toddler in daycare";
+      break;
+    case 3:
+      return "I was a toddler in preschool.";
+      break;
+    case 4:
+      return "I was in preschool. George Bush was elected president."
+    case 5: 
+      return "I was a kindergartener at the Montessori School.";
+      break;
+    case 6:
+      return "I entered first grade at Packanack Lake Elementary School.";
+      break;
+    case 7: 
+      return "I entered second grade at Packanack Lake Elementary School.";
+      break;
+    case 8:
+      return "I entered third grade at Packanack Lake Elementary School. Bill Clinton was elected president, beating George Bush and Ross Perot.";
+      break;
+    case 9: 
+      return "I entered fourth grade in the Windows program at Packanack Lake Elementary School.";
+      break;
+    case 10:
+      return "I entered fifth grade in the Windows program at Packanack Lake Elementary School.";
+      break;
+    case 11: 
+      return "I entered sixth grade at Schuyler Colfax Middle School.";
+      break;
+    case 12:
+      return "I entered seventh grade at Schuyler Colfax Middle School. Bill Clinton won re-election against Bob Dole. I got contacts.";
+      break;
+    case 13:
+      return "I entered eighth grade at Schuyler Colfax Middle School.";
+      break;
+    case 14:
+      return "I graduated from middle school and entered my freshman year of high school at Wayne Hills.";
+      break;
+    case 15: 
+      return "I entered my sophomore year of high school at Wayne Hills.";
+      break;
+    case 16: 
+      return "I entered my junior year of high school at Wayne Hills. George W. Bush was elected president.";
+      break;
+    case 17: 
+      return "I entered my senior year of high school at Wayne Hills. It was also the year of 9/11...";
+      break;
+    case 18:
+      return 'I graduated high school and started as a freshman in college at BU. This was also the year the war in Iraq started, and I watched the footage of the first "shock and awe" maneuver in the TV lounge at my dorm.';
+      break;
+    case 19: 
+      return "I entered my sophomore year of college at BU.";
+      break;
+    case 20: 
+      return "I entered my junior year of college at BU. This was also the year I studied abroad and first voted for president. I voted for John Kerry, but George W. Bush won.";
+      break;
+    case 21:
+      return "I entered my senior year of college at BU and moved to an apartment off-campus.";
+      break;
+    case 22: 
+      return "I graduated college and started my 1L year at Columbia.";
+      break;
+    case 23: 
+      return "I was in law school, finishing 1L and entering my 2L year at Columbia.";
+      break;
+    case 24:
+      return "I was in law school, finishing 2L and entering my 3L year at Columbia. This was also the year my mom moved to Switzerland, and Obama was elected president.";
+      break;
+    case 25:
+      return 'I graduated law school, took the bar exam and a "summer of many mountains" bar trip, moved to Gramercy, and started as a first-year associate at Orrick.';
+      break;
+    case 26: 
+      return "I was a first to second year associate at Orrick. Mom came to visit from Switzerland right after Tax Day.";
+      break;
+    case 27:
+      return "I finished my second year at Orrick, left the firm, and moved from Gramercy to Greenpoint.";
+    case 28:
+      return "I was living in Greenpoint, doing a lot of pro bono work, and started doing some LSAT tutoring. Sandy happened, and Obama beat Romney.";
+      break;
+    case 29:
+      return "I was living in Boerum Hill and working as an adjunct English professor.";
+      break;
+    case 30: 
+      return "I started working as a contract attorney on a Milbank project and moved to Crown Heights.";
+      break;
+    case 31:
+      return "I started working as a Spanish language contract attorney.";
+      break;
+    case 32:
+      return "Milbank hired me as a staff attorney.";
+      break;
+    case 33:
+      return "Milbank promoted me to permanent employee, and I moved to my one-bedroom apartment in NJ.";
+      break;    
+    default:
+      return "I haven't written a description for that time yet.";
+      break;
+                    };
+};
+
+const getYearsAgoMessage = (yearInQuestion) => {
+  document.write(`In the year ${yearInQuestion}, I turned ${getMyAgeThen(yearInQuestion)} years old. ${getMyLifeThen(yearInQuestion)} `);
+};
+
+getYearsAgoMessage(prompt("What is the year in question?"));
+  
+</script>

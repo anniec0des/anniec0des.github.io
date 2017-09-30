@@ -13,9 +13,24 @@ const getHowManyYearsAgo = (yearInQuestion) => {
   return howManyYearsAgo;
 }
 
-const getMyAgeThen = (yearInQuestion) => {
-  let myAgeThen = yearInQuestion - 1984;
-  return myAgeThen;
+const getMyAgeThen = (yearInQuestion) => {  
+  let myAgeThen = yearInQuestion - 1984;  
+  const getPluralOrSingleYear = (myAgeThen) => {
+    let absMyAgeThen = Math.abs(myAgeThen);
+    let pluralOrSingle = ""
+    if (absMyAgeThen === 1) {
+      pluralOrSingleYear = "year"
+    } else {
+      pluralOrSingleYear = "years"
+    }
+    return pluralOrSingleYear
+  }  
+  if (myAgeThen < 0) {
+    let yearsBeforeMe = Math.abs(myAgeThen);
+    return `that was ${yearsBeforeMe} ${getPluralOrSingleYear(myAgeThen)} before I was born`
+  } else {
+    return `I turned ${myAgeThen} ${getPluralOrSingleYear(myAgeThen)} old`;
+  };
 };
 
 const getMyLifeThen = (yearInQuestion) => {
@@ -128,7 +143,7 @@ const getMyLifeThen = (yearInQuestion) => {
 };
 
 const getYearsAgoMessage = (yearInQuestion) => {
-  document.write(`The year ${yearInQuestion} was ${getHowManyYearsAgo(yearInQuestion)} years ago. I turned ${getMyAgeThen(yearInQuestion)} years old, and ${getMyLifeThen(yearInQuestion)} `);
+  document.write(`The year ${yearInQuestion} was ${getHowManyYearsAgo(yearInQuestion)} years ago, and ${getMyAgeThen(yearInQuestion)}. ${getMyLifeThen(yearInQuestion)} `);
 };
 
 getYearsAgoMessage(prompt("What is the year in question?"));
